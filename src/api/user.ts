@@ -1,8 +1,5 @@
 import delay from '../utils/delay'
-interface User {
-  id: string
-  name: string
-}
+import { User} from '../types/index'
 const getUserData = (): User[] => {
   const count = Math.floor(Math.random() * 20)
   return Array(count)
@@ -11,6 +8,8 @@ const getUserData = (): User[] => {
       return {
         id: Math.random() + '',
         name: (Math.random() + 1).toString(36).substring(7),
+        //随机生成手机号
+        phone: (Math.random() + 1).toString(36).substring(7),
       }
     })
 }
